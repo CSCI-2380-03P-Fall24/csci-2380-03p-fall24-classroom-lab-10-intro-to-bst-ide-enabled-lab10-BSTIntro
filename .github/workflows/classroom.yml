@@ -58,6 +58,15 @@ jobs:
         command: make test try=treeHeight
         timeout: 10
         max-score: 1
+    - name: countLeaves
+      id: countleaves
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: countLeaves
+        setup-command: ''
+        command: make test try=countLeaves
+        timeout: 10
+        max-score: 1
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
@@ -66,5 +75,6 @@ jobs:
         SEARCHTREE_RESULTS: "${{steps.searchtree.outputs.result}}"
         TREESIZE_RESULTS: "${{steps.treesize.outputs.result}}"
         TREEHEIGHT_RESULTS: "${{steps.treeheight.outputs.result}}"
+        COUNTLEAVES_RESULTS: "${{steps.countleaves.outputs.result}}"
       with:
-        runners: node,createtree,searchtree,treesize,treeheight
+        runners: node,createtree,searchtree,treesize,treeheight,countleaves

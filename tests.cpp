@@ -102,3 +102,27 @@ TEST_CASE("treeHeight") {
     delete nullRoot;
     delete newNode;
 }
+
+TEST_CASE("countLeaves") {
+    Node* root = createTree();
+    Node* root2 = secondTree();
+    Node* nullRoot = nullptr;
+
+    // For createTree() the leaf nodes are:
+    // -1, 6, 12, 15, 19, 99
+    // Total = 6
+    CHECK(countLeaves(root) == 6);
+
+    // For secondTree() the leaf nodes are:
+    // -3, 1, 3, 5, 8, 11, 13, 20
+    // Total = 8
+    CHECK(countLeaves(root2) == 8);
+
+    // nullptr should safely return 0 leaves
+    CHECK(countLeaves(nullRoot) == 0);
+
+    // Single node = 1 leaf
+    Node* single = new Node(10);
+    CHECK(countLeaves(single) == 1);
+    delete single;
+}

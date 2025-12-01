@@ -69,6 +69,17 @@ int treeSize(Node* root) {
 
 }
 
+
+// Return the number of leaf nodes in the tree.
+// A leaf is a node with no children.
+int countLeaves(Node* root) {
+	// base case
+	return -1;
+
+	// General case
+	return -1;
+}
+
 // BONUS! Write a function that will determine the height of the tree
 int treeHeight(Node* root) {
 	// base case
